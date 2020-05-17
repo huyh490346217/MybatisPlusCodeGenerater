@@ -1,0 +1,29 @@
+
+server:
+  port: 7070
+
+# DataSource Config  jdbc:mysql://localhost:3306/nacos?useUnicode=true&useSSL=false&characterEncoding=utf8  dsc.setDriverName("com.mysql.jdbc.Driver");
+#        dsc.setUsername("root");
+#        dsc.setPassword("2018@Jura");
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis_demo?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456
+
+mybatis-plus:
+  # MyBatis Mapper所对应的XML文件位置
+#  mapper-locations: classpath:*/mapper/test/**/*Mapper.xml
+#  typeAliasesPackage: com.baomidou.ant.test.**.entity
+  mapper-locations: classpath:*/mapper/admin/**/*Mapper.xml
+#  typeAliasesPackage: com.jurassic.cloud.**.entity
+  typeAliasesPackage: com.**.entity
+  global-config:
+    banner: false
+    db-config:
+      id-type: UUID
+
+logging:
+  level:
+    com: DEBUG
